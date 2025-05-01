@@ -1,0 +1,232 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;  /* Adjusted for fixed header */
+  }
+
+  body {
+    @apply font-sans text-foreground bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+/* Enhanced reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Menu item animations */
+.menu-item-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.menu-item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Section headings with enhanced styling */
+.section-heading {
+  @apply font-playfair text-3xl md:text-4xl font-bold relative inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  @apply absolute -bottom-2 left-0 w-2/3 h-1 bg-accent transform transition-transform duration-500;
+}
+
+.section-heading:hover::after {
+  @apply scale-x-125 origin-left;
+}
+
+/* Enhanced buttons */
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3 rounded-lg shadow-custom 
+  transition-all duration-300 inline-flex items-center justify-center hover:shadow-lg hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-3 rounded-lg shadow-custom 
+  transition-all duration-300 inline-flex items-center justify-center hover:shadow-lg hover:scale-105;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium 
+  px-6 py-3 rounded-lg shadow-custom transition-all duration-300 inline-flex items-center justify-center;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-custom-lg hover:-translate-y-1;
+}
+
+/* Glass effect for cards */
+.glass-card {
+  @apply bg-white/80 backdrop-blur-sm;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  @apply bg-gradient-to-br from-primary to-primary/80;
+}
+
+.bg-gradient-light {
+  @apply bg-gradient-to-br from-white to-softYellow/30;
+}
+
+/* Enhanced floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* More refined animations */
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 3s ease-in-out infinite;
+}
+
+/* Enhanced image zoom */
+.zoom-hover {
+  @apply overflow-hidden;
+}
+
+.zoom-hover img {
+  @apply transition-transform duration-700 ease-in-out;
+}
+
+.zoom-hover:hover img {
+  @apply scale-110;
+}
+
+/* Enhanced fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Text glow effect for premium titles */
+.text-glow {
+  text-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+}
+
+/* Improved spacing for all sections */
+section {
+  @apply py-24;
+}
+
+@media (max-width: 768px) {
+  section {
+    @apply py-16;
+  }
+}
+
+/* Card flip animation */
+.card-flip {
+  perspective: 1000px;
+}
+
+.card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite;
+}
+
+/* Glow effect animations */
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(193, 120, 23, 0.8)); }
+  50% { filter: drop-shadow(0 0 14px rgba(255, 193, 7, 0.9)); }
+}
+
+.animate-glow {
+  animation: glow 2.5s infinite;
+}
+
+/* Border animation */
+@keyframes border-dance {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+.animate-border {
+  animation: border-dance 5s infinite;
+}
+
+/* Enhance mobile experience */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary {
+    @apply py-2 px-4 text-sm;
+  }
+  
+  .section-heading {
+    @apply text-2xl;
+  }
+}
