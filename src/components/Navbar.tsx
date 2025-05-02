@@ -1,12 +1,13 @@
 const Navbar = () => {
   return (
-    <nav className="fixed w-full z-50 px-6 py-4">
+    <nav className="fixed w-full z-50 px-6 py-4 bg-white/90 backdrop-blur shadow">
       <div className="max-w-[1200px] mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="font-medium text-[#141413]">Antimetal</span>
+        <div className="flex items-center gap-3">
+          <img src="/AFP-logo-removebg-preview-1.png" alt="AFP Logo" className="w-12 h-12 object-contain drop-shadow-md" />
+          <div className="flex flex-col leading-tight">
+            <span className="font-playfair text-xl font-bold text-accent">Al-Amin</span>
+            <span className="font-playfair text-sm text-[#141413]">Food Paradise</span>
+          </div>
         </div>
         
         <div className="hidden md:flex items-center gap-8">

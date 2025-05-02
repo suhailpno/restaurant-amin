@@ -1,11 +1,10 @@
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock } from 'lucide-react';
-import GlowEffect from './GlowEffect';
+import { Facebook, Instagram, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gradient-to-br from-secondary/95 to-secondary overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-secondary/95 to-secondary/80 overflow-hidden text-white">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-white/5 blur-3xl"></div>
@@ -13,165 +12,77 @@ const Footer = () => {
         <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-accent/5 blur-3xl"></div>
       </div>
 
-    
-      
-      <div className="container mx-auto relative pt-8 pb-16 px-4 md:px-6 z-10">
-        {/* Top section with columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand and description */}
-          <div className="space-y-6">
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <span className="font-playfair text-3xl font-bold text-accent">Al-Amin</span>
-                <span className="font-playfair text-xl ml-2 text-white/90">Food Paradise</span>
-              </div>
-              <div className="h-1 w-20 bg-accent mt-2 rounded-full"></div>
+      <div className="container mx-auto relative pt-12 pb-8 px-4 md:px-8 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8 text-center md:text-left items-start">
+          {/* Logo and Brand */}
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <img src="https://i.postimg.cc/rK648xSD/AFP-logo-removebg-preview-1.png" alt="AFP Logo" className="w-36 h-36 mx-auto md:mx-0 object-contain drop-shadow-lg animate-glow" />
+            <div className="flex flex-col items-center md:items-start">
+              <span className="font-playfair text-3xl font-bold text-accent">Al-Amin</span>
+              <span className="font-playfair text-xl text-white/90">Food Paradise</span>
             </div>
-            
-            <p className="text-gray-300 text-lg">
-              Authentic Indian and Singaporean cuisine since 2005. Experience the rich flavors crafted 
-              with care and served with love.
-            </p>
-            
-            <div className="flex space-x-4">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white/10 hover:bg-accent hover:text-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white/10 hover:bg-accent hover:text-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white/10 hover:bg-accent hover:text-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
+            <div className="h-1 w-20 bg-accent mt-2 rounded-full mx-auto md:mx-0"></div>
           </div>
-          
+
           {/* Quick Links */}
-          <div className="space-y-6">
-            <h4 className="font-playfair font-bold text-2xl text-white relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-12 after:h-1 after:bg-accent">Quick Links</h4>
-            <ul className="space-y-4">
-              <li>
-                <a href="#about" className="group flex items-center text-gray-300 hover:text-white transition-colors">
-                  <span className="w-2 h-2 bg-accent rounded-full mr-2 transform transition-transform group-hover:scale-125"></span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">About Us</span>
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="group flex items-center text-gray-300 hover:text-white transition-colors">
-                  <span className="w-2 h-2 bg-accent rounded-full mr-2 transform transition-transform group-hover:scale-125"></span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">Menu</span>
-                </a>
-              </li>
-              <li>
-                <a href="#gallery" className="group flex items-center text-gray-300 hover:text-white transition-colors">
-                  <span className="w-2 h-2 bg-accent rounded-full mr-2 transform transition-transform group-hover:scale-125"></span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">Gallery</span>
-                </a>
-              </li>
-              <li>
-                <a href="#location" className="group flex items-center text-gray-300 hover:text-white transition-colors">
-                  <span className="w-2 h-2 bg-accent rounded-full mr-2 transform transition-transform group-hover:scale-125"></span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">Location</span>
-                </a>
-              </li>
-              <li>
-                <a href="#order" className="group flex items-center text-gray-300 hover:text-white transition-colors">
-                  <span className="w-2 h-2 bg-accent rounded-full mr-2 transform transition-transform group-hover:scale-125"></span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-200">Order Online</span>
-                </a>
-              </li>
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <h4 className="font-playfair font-bold text-2xl text-white mb-2">Quick Links</h4>
+            <ul className="space-y-2 text-base">
+              <li><a href="#about" className="hover:text-accent transition-colors">About Us</a></li>
+              <li><a href="#menu" className="hover:text-accent transition-colors">Menu</a></li>
+              <li><a href="#gallery" className="hover:text-accent transition-colors">Gallery</a></li>
+              <li><a href="#location" className="hover:text-accent transition-colors">Location</a></li>
+              <li><a href="#order" className="hover:text-accent transition-colors">Order Online</a></li>
             </ul>
           </div>
-          
-          {/* Contact Details */}
-          <div className="space-y-6">
-            <h4 className="font-playfair font-bold text-2xl text-white relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-12 after:h-1 after:bg-accent">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-gray-300">
-                  47 Holland Dr<br />
-                  #01-377<br />
-                  Singapore 270047
-                </span>
+
+          {/* Contact & Social */}
+          <div className="flex flex-col items-center md:items-end space-y-4">
+            <h4 className="font-playfair font-bold text-2xl text-white mb-2">Contact & Social</h4>
+            <ul className="space-y-2 text-base mb-2">
+              <li className="flex items-center gap-2 justify-center md:justify-end">
+                <MapPin className="h-5 w-5 text-accent" />
+                <a
+                  href="https://www.google.com/maps/place/Al-Amin+Food+Paradise/@1.3086811,103.7924029,17z/data=!3m1!4b1!4m6!3m5!1s0x31da1a69f9d8c12f:0x9b7187f076f8937f!8m2!3d1.3086811!4d103.7924029!16s%2Fg%2F11f0w_4f02?entry=ttu&g_ep=EgoyMDI1MDQyNy4xIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  47 Holland Dr, #01-377, Singapore 270047
+                </a>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                <a href="tel:+6591655269" className="text-gray-300 hover:text-white transition-colors">+65 9165 5269</a>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                <a href="mailto:info@alaminfood.sg" className="text-gray-300 hover:text-white transition-colors">info@alaminfood.sg</a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Opening Hours */}
-          <div className="space-y-6">
-            <h4 className="font-playfair font-bold text-2xl text-white relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-12 after:h-1 after:bg-accent">Opening Hours</h4>
-            <ul className="space-y-3">
-              <li className="flex justify-between">
-                <div className="flex items-center space-x-2">
-                  <Clock className="h-4 w-4 text-accent" />
-                  <span className="text-gray-300">Monday - Friday</span>
-                </div>
-                <span className="text-white">10:00 AM - 10:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <div className="flex items-center space-x-2">
-                  <Clock className="h-4 w-4 text-accent" />
-                  <span className="text-gray-300">Saturday - Sunday</span>
-                </div>
-                <span className="text-white">8:00 AM - 10:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <div className="flex items-center space-x-2">
-                  <Clock className="h-4 w-4 text-accent" />
-                  <span className="text-gray-300">Public Holidays</span>
-                </div>
-                <span className="text-white">8:00 AM - 10:00 PM</span>
+              <li className="flex items-center gap-2 justify-center md:justify-end">
+                <Phone className="h-5 w-5 text-accent" />
+                <a
+                  href="https://wa.me/6591655269"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  +65 9165 5269
+                </a>
               </li>
             </ul>
-            
-            <div className="pt-2">
-              <a 
-                href="https://www.google.com/maps/place/Al-Amin+Food+Paradise/@1.3086811,103.7924029,17z/data=!3m1!4b1!4m6!3m5!1s0x31da1a69f9d8c12f:0x9b7187f076f8937f!8m2!3d1.3086811!4d103.7924029!16s%2Fg%2F11f0w_4f02?entry=ttu"
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-accent/90 hover:bg-accent text-secondary px-4 py-2 rounded-lg transition-colors duration-300"
-              >
-                <MapPin className="h-4 w-4 mr-2" />
-                Get Directions
-              </a>
+            <div className="flex space-x-4 justify-center md:justify-end">
+              <a href="https://www.facebook.com/alaminfoodparadisesg" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-white/10 hover:bg-accent hover:text-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"><Facebook className="h-5 w-5" /></a>
+              <a href="https://www.instagram.com/alaminfoodparadise/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-white/10 hover:bg-accent hover:text-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.tiktok.com/@alaminfoodparadise" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="bg-white/10 hover:bg-accent hover:text-secondary p-3 rounded-full transition-all duration-300 hover:scale-110"><svg className="h-5 w-5" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M28.5 10.5c-2.5 0-4.5-2-4.5-4.5h-4v17c0 1.1-.9 2-2 2s-2-.9-2-2v-7h4v-4h-4c-3.3 0-6 2.7-6 6v5c0 3.3 2.7 6 6 6s6-2.7 6-6V14.5c1.2 1.1 2.8 1.8 4.5 1.8v-5.8z" /></svg></a>
             </div>
           </div>
         </div>
-        
-        {/* Bottom section with copyright and payment methods */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-center md:text-left">&copy; {currentYear} Al-Amin Food Paradise. All rights reserved.</p>
-          </div>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 pt-8 mt-8 border-t border-white/10">
+          <p className="text-gray-400 text-center md:text-left text-sm">&copy; {currentYear} Al-Amin Food Paradise. All rights reserved.</p>
         </div>
       </div>
+      <style>{`
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 32px 8px rgba(255,255,255,0.5); }
+          50% { box-shadow: 0 0 64px 16px rgba(255,255,255,0.9); }
+        }
+        .animate-glow {
+          animation: glow 2s infinite alternate;
+        }
+      `}</style>
     </footer>
   );
 };

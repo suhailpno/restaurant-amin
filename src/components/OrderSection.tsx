@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import GlowEffect from './GlowEffect';
 
@@ -51,66 +50,37 @@ const OrderSection = () => {
           Order now through our delivery partners for a quick and convenient experience.
         </p>
         
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-          {/* Foodpanda with updated link */}
-          <div 
-            className="reveal animate-float"
-            style={{ animationDelay: "0.2s" }}
-            onMouseEnter={() => setIsHoverFoodpanda(true)}
-            onMouseLeave={() => setIsHoverFoodpanda(false)}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
+          {/* Foodpanda */}
+          <a
+            href="https://www.foodpanda.sg/restaurant/v6tq/al-amin-food-paradise-holland-village?srsltid=AfmBOooQYO2RnfIXPhV_keZoZgeZnlRI5io5oT9lUl-WS-nCh6YbR-SV"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-white/80 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-0 w-40 md:w-56 flex items-center justify-center overflow-hidden hover:scale-105"
+            aria-label="Order on Foodpanda"
           >
-            <a 
-              href="https://www.foodpanda.sg/restaurant/v6tq/al-amin-food-paradise-holland-village?srsltid=AfmBOooQYO2RnfIXPhV_keZoZgeZnlRI5io5oT9lUl-WS-nCh6YbR-SV" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onClick={() => trackOrderClick('foodpanda')}
-              className="block relative"
-            >
-              <GlowEffect className={isHoverFoodpanda ? "scale-105" : "scale-100"}>
-                <div className={`
-                  transition-all duration-500 flex flex-col items-center justify-center
-                `}>
-                  <div className="w-40 h-40 mb-4 overflow-hidden rounded-lg">
-                    <img 
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Foodpanda_logo_since_2017.jpeg" 
-                      alt="FOODPANDA" 
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-              </GlowEffect>
-            </a>
-          </div>
-          
-          {/* GrabFood with updated link */}
-          <div 
-            className="reveal animate-float"
-            style={{ animationDelay: "0.5s" }}
-            onMouseEnter={() => setIsHoverGrabfood(true)}
-            onMouseLeave={() => setIsHoverGrabfood(false)}
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Foodpanda_logo_since_2017.jpeg"
+              alt="Order on Foodpanda"
+              className="w-full h-auto object-contain"
+              style={{ maxHeight: '120px' }}
+            />
+          </a>
+          {/* GrabFood */}
+          <a
+            href="https://food.grab.com/sg/en/restaurant/al-amin-food-paradise-holland-drive-delivery/SGDD06828?"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-white/80 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-0 w-40 md:w-56 flex items-center justify-center overflow-hidden hover:scale-105"
+            aria-label="Order on GrabFood"
           >
-            <a 
-              href="https://food.grab.com/sg/en/restaurant/al-amin-food-paradise-holland-drive-delivery/SGDD06828?" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onClick={() => trackOrderClick('grabfood')}
-              className="block relative"
-            >
-              <GlowEffect className={isHoverGrabfood ? "scale-105" : "scale-100"}>
-                <div className={`
-                  transition-all duration-500 flex flex-col items-center justify-center
-                `}>
-                  <div className="w-40 h-40 mb-4 overflow-hidden rounded-lg">
-                    <img 
-                      src="https://i.pinimg.com/736x/6e/9b/95/6e9b95d516082899783cfd05d7629995.jpg" 
-                      alt="GRABFOOD" 
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-              </GlowEffect>
-            </a>
-          </div>
+            <img
+              src="https://i.pinimg.com/736x/6e/9b/95/6e9b95d516082899783cfd05d7629995.jpg"
+              alt="Order on GrabFood"
+              className="w-full h-auto object-contain"
+              style={{ maxHeight: '120px' }}
+            />
+          </a>
         </div>
       </div>
     </section>
